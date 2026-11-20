@@ -1,15 +1,12 @@
 class Solution:
-    def m(self, x: int) -> int:
+    def is_palindrome(self, x: int) -> bool:
         x = str(x)
-        j = -1
-        for i in range(len(x)):
-            if x[i] == x[j]:
-                j -= 1
-            else:
+
+        for i in range(len(x) // 2):
+            if x[i] != x[-(i + 1)]:
                 return False
+
         return True
+test  = Solution()
 
-
-b = Solution()
-
-print(b.m(1))
+print(test.is_palindrome(123565321))
